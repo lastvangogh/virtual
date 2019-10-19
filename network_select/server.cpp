@@ -19,8 +19,8 @@ void thread_task()
  
 int main()
 {
-   //printf("%d\n",AF_INET);//IPv4协议
-    printf("%d\n",SOCK_STREAM);//字节流套接字
+    //printf("%d\n",AF_INET);//IPv4协议
+    //printf("%d\n",SOCK_STREAM);//字节流套接字
     int ss = socket(AF_INET, SOCK_STREAM, 0);//若成功则返回一个sockfd（套接字描述符）
     //printf("%d\n",ss);
     struct sockaddr_in server_sockaddr;//一般是储存地址和端口的。用于信息的显示及存储使用
@@ -63,8 +63,8 @@ int main()
     while(1)
     {
     //这里把send注释掉了，所以这个程序中server只能是接收client端的数据并能给client发送数据，即使不注释掉也没用，因为没有对是否有数据传入和传入
-　//进行判断所以按照下面的代码这样写，每次都要先让server输入后才能输出client传过来的数据，若是server不输入则程序无法向下走就没有client发送过来的输出，
-　　　　　//而且每次显示也只能是一行，这样显示就全是错的了，所以就需要select和FD_ISSET的判断了
+    //进行判断所以按照下面的代码这样写，每次都要先让server输入后才能输出client传过来的数据，若是server不输入则程序无法向下走就没有client发送过来的输出，
+    //而且每次显示也只能是一行，这样显示就全是错的了，所以就需要select和FD_ISSET的判断了
         // memset(buf, 0 ,sizeof(buf));
         // if(fgets(buf, sizeof(buf),stdin) != NULL) {
         //     send(conn, buf, sizeof(buf), 0);   
